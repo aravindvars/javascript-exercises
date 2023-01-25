@@ -1,8 +1,6 @@
 const sumAll = function (a, b) {
   let sum;
-  if (a <= 0 || b <= 0) {
-    sum = "ERROR";
-  } else if (typeof a != "number" || typeof b != "number") {
+  if (a <= 0 || b <= 0 || typeof a != "number" || typeof b != "number") {
     sum = "ERROR";
   } else {
     sum = 0;

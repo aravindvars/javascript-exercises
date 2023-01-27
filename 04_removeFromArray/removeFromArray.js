@@ -1,20 +1,8 @@
-const removeFromArray = function (array, b) {
-  // const a = [];
-  let i;
-  let index = array.indexOf(b);
-
-  for (i = 0; i < array.length; i++) {
-    if (array[i] == b) {
-      // return a.splice(index, 1);
-      // return a[a.indexOf(b)];
-      let x = array.splice(index, 1);
-      for (const element of array) {
-        if (element != x) {
-          return array;
-        }
-      }
-    }
-  }
+const removeFromArray = function (array, ...args) {
+  const output = array.filter(function (obj) {
+    return args.indexOf(obj) === -1;
+  });
+  return output;
 };
 
 // Do not edit below this line

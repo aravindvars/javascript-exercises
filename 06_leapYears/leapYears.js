@@ -16,5 +16,5 @@ const leapYears = function (year) {
 // Do not edit below this line
 module.exports = leapYears;
 
-// if year / 4 == 0, then true
-// if year/100 && year/400 == 0, then true
+// if year % 4 == 0, then true
+// if year%100 && year%400 == 0, then true

@@ -1,0 +1,29 @@
+<html>
+  <head> </head>
+  <body>
+    <input>Enter some number here</input>
+    <button>Clockhere</button> Fib
+  </body>
+  <script>
+    const fun = document.querySelector('button');
+
+    const fibonacci = function (num) {
+      num = document.querySelector('input').value;
+      let n = 0;
+      let a = 1;
+      let fib;
+      if(+num == 1){
+        fib = 1;
+      }
+      else{
+        for (i = 0; i < (+num-1); i++) {
+        fib = n + a;
+        n = a;
+        a = fib;
+        }
+      }
+      console.log(fib);
+    };
+    fun.addEventListener('click', fibonacci);
+  </script>
+</html>

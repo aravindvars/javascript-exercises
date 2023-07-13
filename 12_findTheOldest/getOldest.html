@@ -1,0 +1,64 @@
+<html>
+  <head></head>
+  <body>
+    <button onclick="findTheOldest()"></button>
+  </body>
+  <script>
+    const people = [
+      {
+        name: 'Carly',
+        yearOfBirth: 2018,
+        yearOfDeath: 1970,
+      },
+      {
+        name: 'Ray',
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: 'Jane',
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ];
+    const findTheOldest = function () {
+      console.log('running');
+
+      const date = new Date();
+      const year = people.map((yea) => {
+        if (!yea.yearOfDeath) {
+          yea.yearOfDeath = date.getFullYear();
+        }
+        return yea;
+      });
+      console.table(year);
+
+      const maxAge = year.sort(function (a, b) {
+        return a.yearOfDeath - a.yearOfBirth > b.yearOfDeath - b.yearOfBirth
+          ? 1
+          : -1;
+      });
+      console.table(maxAge);
+      let oldest = maxAge[year.length - 1];
+      console.table(oldest);
+
+      // const maxAge = people.sort((a, b) =>
+      //   a.yearOfDeath - a.yearOfBirth < b.yearOfDeath - b.yearOfBirth ? 1 : -1
+      // );
+      // let oldest = maxAge[0];
+      // console.log(oldest);
+      // // console.table(maxAge);
+      // const maxiAge = people
+      //   .reduce(function (arr, name) {
+      //     const date = new Date();
+      //     if (!arr[name].yearOfDeath) {
+      //       arr[name].yearOfDeath = date.getFullYear();
+      //     }
+      //   }, 0)
+      //   .sort((a, b) =>
+      //     a.yearOfDeath - a.yearOfBirth > b.yearOfDeath - b.yearOfBirth ? 1 : -1
+      //   );
+      // console.table((oldest = maxAge[people.length - 1]));
+    };
+  </script>
+</html>

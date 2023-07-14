@@ -1,0 +1,55 @@
+<html>
+  <head></head>
+  <body>
+    <input type="text" id="text" />
+    <button onclick="palindromes()">Click me</button>
+  </body>
+  <script>
+    const palindromes = function (string) {
+      console.log('running');
+      const text = document
+        .querySelector('#text')
+        .value.toLocaleLowerCase()
+        .replace(/[!,.,,, ]/g, '');
+      console.log(text);
+
+      let arr = text.split('');
+      // console.log(arr);
+      // console.log(arr.length);
+      // arr_str.forEach((element) => {
+      //   console.log(element);
+      // });
+      let name = [];
+      for (let i = arr.length - 1; i >= 0; i--) {
+        name.push(arr[i]);
+      }
+      console.log(name);
+      // console.log(name.length);
+      // console.log(arr[0]);
+      // console.log(name[0]);
+
+      // for (let i = 0; i <= arr.length - 1; i++) {
+      //   if (name[i] == arr[i]) {
+      //     console.log('success');
+      //   } else console.log('failure');
+      // }
+      let text_rev = name.map((n) => n).join('');
+      console.log(text_rev);
+      if (text_rev == text) {
+        console.log('success');
+      } else console.log('failure');
+      // console.log(arr_str);
+      // for (let i = string.length - 1; i >= 0; i--) {
+      //   name += string[i];
+      // }
+      // if (name === string) {
+      //   console.log('true');
+      //   return true;
+      // } else {
+      //   console.log('false');
+      //   return false;
+      // }
+    };
+  </script>
+</html>
+; // Do not edit below this line module.exports = palindromes;

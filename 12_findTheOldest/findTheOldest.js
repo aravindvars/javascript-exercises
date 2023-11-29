@@ -1,5 +1,6 @@
 const findTheOldest = function (array) {
   const date = new Date();
+
   const year = array
     .map((yea) => {
       if (!yea.yearOfDeath) {
@@ -11,11 +12,11 @@ const findTheOldest = function (array) {
       a.yearOfDeath - a.yearOfBirth > b.yearOfDeath - b.yearOfBirth ? 1 : -1
     );
 
-  // const maxAge = year.sort(function (a, b) {
-  //   return a.yearOfDeath - a.yearOfBirth > b.yearOfDeath - b.yearOfBirth
-  //     ? 1
-  //     : -1;
-  // });
+  const maxAge = year.sort(function (a, b) {
+    return a.yearOfDeath - a.yearOfBirth > b.yearOfDeath - b.yearOfBirth
+      ? 1
+      : -1;
+  });
   return (oldest = year[array.length - 1]);
 
   // const maxiAge = array
